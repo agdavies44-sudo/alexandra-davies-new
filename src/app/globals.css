@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0b0b0b;
+  --paper: #f4f4f2;
+  --white: #ffffff;
+  --muted: #7f7f7b;
+  --mid: #555555;
+  --line: #cfcfcb;
+  --accent: #722b3d;
+  --accent-soft: #8f3048;
+  --contact-muted: #a5a5a1;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-muted: var(--muted);
+  --color-mid: var(--mid);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-dm-sans);
+  --font-serif: var(--font-playfair);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 92px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-dm-sans), "DM Sans", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.wordmark {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+/* Carousel scrollbars — thin, native feel */
+.carousel-track {
+  scrollbar-width: thin;
+  scrollbar-color: #bdbdb8 transparent;
+}
+.carousel-track::-webkit-scrollbar {
+  height: 6px;
+}
+.carousel-track::-webkit-scrollbar-thumb {
+  background: #bdbdb8;
+  border-radius: 3px;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.84);
+  backdrop-filter: blur(7px);
+}
+
+body.modal-open {
+  overflow: hidden;
+}
